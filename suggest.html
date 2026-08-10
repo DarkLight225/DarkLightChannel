@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Предложить идею — DarkLight</title>
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --text-main: #e0e0e0;
+      --text-muted: #888888;
+      --border: #333333;
+      --accent: #c0c0c0; /* тот же цвет, что и на главной */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg-dark);
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    /* Точно такой же стиль, как на главной: без свечения, просто светлее цвет */
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+      margin-top: 0;
+    }
+
+    p.description {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    textarea, input[type="text"], input[type="email"] {
+      width: 100%;
+      background: var(--bg-card);
+      color: white;
+      border: 1px solid var(--border);
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    button.submit-btn {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 14px 28px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+    }
+
+    button.submit-btn:hover {
+      background: var(--accent);
+      color: #000;
+    }
+
+    @media (max-width: 768px) {
+      .top-nav { gap: 16px; flex-wrap: wrap; }
+      .container { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Меню: точно такое же, как на index.html -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-link">Главная</a>
+    <a href="suggest.html" class="nav-link active">Предложить идею</a>
+  </nav>
+
+  <div class="container">
+    <h1>Предложить идею</h1>
+    <p class="description">Есть идея для челленджа, DLC, настолки или чего-то для стрима? Напиши — я всё читаю.</p>
+
+    <!-- ВАЖНО: замени твой-email@example.com на свою почту -->
+    <form action="mailto:твой-email@example.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Как тебя зовут?" required>
+      <input type="email" name="email" placeholder="Твой e-mail" required>
+      <textarea name="message" placeholder="Твоя идея" required></textarea>
+      <button type="submit" class="submit-btn">Отправить идею</button>
+    </form>
+  </div>
+
+</body>
+</html>
