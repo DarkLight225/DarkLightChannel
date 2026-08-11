@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Предложить идею — DarkLight</title>
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --text-main: #e0e0e0;
+      --text-muted: #888888;
+      --border: #333333;
+      --accent: #c0c0c0;
+      --btn-bg: #2a2a2a;          /* Цвет кнопки по умолчанию */
+      --btn-hover: #4a4a4a;       /* Цвет кнопки при наведении */
+      --btn-text: #ffffff;        /* Цвет текста кнопки */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg-dark);
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: var(--accent);
+      border-left: 3px solid var(--accent);
+      padding-left: 12px;
+      margin-top: 0;
+    }
+
+    p.description {
+      color: var(--text-muted);
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    textarea, input[type="text"], input[type="email"] {
+      width: 100%;
+      background: var(--bg-card);
+      color: white;
+      border: 1px solid var(--border);
+      padding: 14px;
+      margin-bottom: 16px;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    /* --- НОВЫЕ СТИЛИ ДЛЯ КНОПКИ --- */
+    button[type="submit"] {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      border: none;
+      padding: 14px 28px;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+      letter-spacing: 1px;
+      border-radius: 6px;
+      font-family: inherit;
+      
+      /* Плавность всех изменений */
+      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+      
+      /* Тень для объёма */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Эффект при наведении */
+    button[type="submit"]:hover {
+      background-color: var(--btn-hover);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+      transform: translateY(-2px); /* Кнопка чуть всплывает */
+    }
+
+    /* Эффект при нажатии */
+    button[type="submit"]:active {
+      transform: translateY(1px); /* Кнопка слегка проваливается */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .top-nav { gap: 16px; flex-wrap: wrap; }
+      .container { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-link">Главная</a>
+    <a href="suggest.html" class="nav-link active">Предложить идею</a>
+  </nav>
+
+  <div class="container">
+    <h1>Предложить идею</h1>
+    <p class="description">Есть идея для челленджа, DLC, настолки или чего-то для стрима? Напиши — я всё читаю.</p>
+
+    <form action="https://formspree.io/f/xdenggqj" method="POST">
+      <label>
+        Ваше имя
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Ваш e-mail (чтобы я мог ответить)
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Сообщение
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+      <!-- Кнопка теперь стилизуется через [type="submit"], класс не нужен -->
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+</body>
+</html>
+
