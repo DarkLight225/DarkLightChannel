@@ -22,6 +22,25 @@
       padding: 0;
     }
 
+    /* Анимация появления */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.7s forwards cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Задержки для каждого блока, чтобы появлялись по очереди */
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+
     .top-nav {
       display: flex;
       justify-content: center;
@@ -196,23 +215,25 @@
     @media (max-width: 768px) {
       h1 { font-size: 2rem; }
       .top-nav { gap: 16px; flex-wrap: wrap; justify-content: center; }
+      /* На мобильных можно отключить анимацию, чтобы страница грузилась быстрее */
+      .fade-in { opacity: 1; transform: none; animation: none; }
     }
   </style>
 </head>
 <body>
 
   <!-- Меню сверху: только главная + «Предложить идею» -->
-  <nav class="top-nav">
+  <nav class="top-nav fade-in">
     <a href="index.html" class="nav-link active">Главная</a>
     <a href="suggest.html" class="nav-link">Предложить идею</a>
   </nav>
 
-  <header class="banner-header">
+  <header class="banner-header fade-in">
     <h1>DarkLight</h1>
     <p class="subtitle">Стримлю, прохожу, делюсь эмоциями</p>
   </header>
 
-  <div class="container">
+  <div class="container fade-in">
     <section class="video-section">
       <h2>Видео</h2>
       <div class="video-wrapper">
