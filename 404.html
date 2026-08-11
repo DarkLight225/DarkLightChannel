@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — DarkLight</title>
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #1a1a1a;
+      --text-main: #e0e0e0;
+      --text-muted: #888888;
+      --border: #333333;
+      --accent: #c0c0c0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Фон: Бездна из Hollow Knight */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      /* Если есть своя картинка — поставь путь, например: url('img/abyss.jpg') */
+      background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35) contrast(1.1);
+      z-index: -1;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      background-color: var(--bg-dark);
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 10;
+    }
+
+    .nav-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s, text-shadow 0.3s, transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+      text-shadow: 0 0 8px rgba(192, 192, 192, 0.4);
+    }
+
+    .nav-link.active {
+      transform: scale(1.05);
+      letter-spacing: 1.5px;
+    }
+
+    .error-container {
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(8px);
+      padding: 40px 30px;
+      border-radius: 12px;
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      border: 1px solid var(--border);
+      z-index: 5;
+    }
+
+    h1.error-code {
+      font-size: 6rem;
+      line-height: 1;
+      color: var(--accent);
+      margin: 0 0
