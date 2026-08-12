@@ -31,7 +31,7 @@
 - **GitHub Pages** — хостинг и деплой.
 
 ## 📂 Структура проекта
-
+```
 DarkLightChannel/
 ├── assets/
 │ ├── css/ # Стили
@@ -41,7 +41,7 @@ DarkLightChannel/
 ├── index.html # Главная страница
 ├── 404.html # Страница ошибки
 └── README.md # Этот файл
-
+```
 ## 🔗 Ссылки
 
 Сайт: https://darklight225.github.io/DarkLightChannel/
