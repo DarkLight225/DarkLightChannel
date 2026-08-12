@@ -42,7 +42,8 @@ DarkLightChannel/
 ├── 404.html # Страница ошибки
 └── README.md # Этот файл
 
-🔗 Ссылки
+## 🔗 Ссылки
+
 Сайт: https://darklight225.github.io/DarkLightChannel/
 TG: t.me/DarkLightik225
 TG CHAT: https://t.me/+MRIrr5dgUhhmNzQy
