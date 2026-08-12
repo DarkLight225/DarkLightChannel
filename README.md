@@ -45,8 +45,13 @@ DarkLightChannel/
 ## 🔗 Ссылки
 
 Сайт: https://darklight225.github.io/DarkLightChannel/
+
 TG: t.me/DarkLightik225
+
 TG CHAT: https://t.me/+MRIrr5dgUhhmNzQy
+
 YOUTUBE: https://www.youtube.com/@2DARK2LIGHT5
+
 VK: https://vk.ru/darklight225
+
 TWITCH: https://www.twitch.tv/2dark2light5
